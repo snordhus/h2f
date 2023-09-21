@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "H2F Documents- National Guard",
-  description: "Created by WashU Students: Sam Nordhus",
+  description: "Created by WashU Students",
 };
 
 export default function RootLayout({ children }) {
