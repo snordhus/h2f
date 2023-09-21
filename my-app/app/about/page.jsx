@@ -1,9 +1,9 @@
 import React from 'react'
 
-const page = () => {
+const Page = () => {
   return (
     <div className='p-4'>about page</div>
   )
 }
 
-export default page
+export default Page
