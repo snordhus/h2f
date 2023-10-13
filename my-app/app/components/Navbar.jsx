@@ -65,7 +65,7 @@ const Navbar = () => {
           <Link href="/physical">Physical</Link>
         </li>
         <li className="p-2 pt-8 cursor-pointer">
-          <Link href="/physical">Mental</Link>
+          <Link href="/mental">Mental</Link>
         </li>
         <li className="p-2 pt-8 cursor-pointer">
           <Link href="/nutrition">Nutrition</Link>
