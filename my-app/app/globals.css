@@ -26,6 +26,10 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+button{
+  background-color: aqua;
+}
+
 .bodyWithMargins {
   margin-left: 10%; /* Adjust the left margin size as needed */
   margin-right: 10%; /* Adjust the right margin size as needed */
