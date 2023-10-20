@@ -2,7 +2,7 @@ import React from 'react';
 
 const Page = () => {
   return (
-    <><div className="border bg-white flex w-[707px] flex-col border-solid border-black">
+    <><div className="border bg-white flex w-[1150px] flex-col border-solid border-black">
       
       <div className="bg-zinc-100 self-stretch flex flex-col pt-16 pb-24 px-5 max-md:max-w-full">
         <div className="self-center flex w-[177px] max-w-full flex-col">
