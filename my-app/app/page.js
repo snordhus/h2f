@@ -31,7 +31,7 @@ export default function Home() {
           <p>Contact a Specialist:</p>
         </div>
       </div>
-      <div className="border bg-white flex w-[707px] flex-col border-solid border-black">
+      <div className="border bg-white flex w-[1100px] flex-col border-solid border-black"s>
       {/* <div className="bg-zinc-300 self-stretch flex w-full items-start justify-between gap-5 mt-1 pl-3.5 pr-5 py-1.5 max-md:flex-wrap max-md:justify-center">
         <div className="text-black text-xs font-medium bg-white w-[49px] max-w-full -mt-px pl-1.5 pr-5 pt-3 pb-1.5">
           logo
