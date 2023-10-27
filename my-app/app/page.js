@@ -1,8 +1,11 @@
 import Image from 'next/image'
+import Documents from './Documents';
 
 export default function Home() {
   return (
     <main className="p-4">
+      <h1>Firestore Documents</h1>
+      <Documents />
       <h1 class="text-4xl pb-8">H2F Documents:</h1>
 
       <div class="pl-8 mb-8">
