@@ -1,9 +1,8 @@
 import React from 'react'
 
-
 const Page = () => {
   return (
-    <div className='p-4'>about page</div>
+    <div className='p-4'>Foundational Nutrition</div>
   )
 }
 
