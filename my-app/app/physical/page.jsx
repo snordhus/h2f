@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link"; 
 
 const Page = () => {
   return (
@@ -97,7 +98,9 @@ const Page = () => {
         <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
           <div className="flex flex-col items-stretch w-[33%] max-md:w-full max-md:ml-0">
             <div className="flex grow flex-col max-md:mt-10">
-              <div className="text-black text-xl">Document </div>
+              <div className="text-black text-xl">
+                <Link href="/injury_prevention">Injury Prevention</Link>
+              </div>
               <div className="text-black text-xs mt-3">
                 Lorem ipsum dolor sit amet, consectetur
               </div>
