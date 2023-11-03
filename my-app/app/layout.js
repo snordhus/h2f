@@ -14,17 +14,19 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ChakraProvider>
-      <html lang="en">
-        <body className={inter.className}>
-          <div id="root" class="bodyWithMargins">
+
+    <html lang="en">
+      <body className={inter.className}>
+        <div id="root" class="bodyWithMargins">
+          <ChakraProvider>
             <AuthContextProvider>
               <Navbar />
               {children}
             </AuthContextProvider>
-          </div>
-        </body>
-      </html>
-    </ChakraProvider>
+          </ChakraProvider>
+        </div>
+      </body>
+    </html>
+
   );
 }
