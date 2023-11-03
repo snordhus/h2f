@@ -8,3 +8,7 @@ https://h2f.vercel.app/
 
 The site is open to the public to provide an organized and user-friendly view of important documents.
 Users can authenticate and contact a specific U.S. army specialist with questions for each document.
+
+### Track project
+
+A project board can be found [here](https://github.com/users/snordhus/projects/2)
