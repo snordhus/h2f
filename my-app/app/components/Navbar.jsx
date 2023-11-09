@@ -95,10 +95,10 @@ const Navbar = () => {
               />
             </InputGroup>
             <Text fontSize="md" color="white" className="text">
-              Test
+              Login
             </Text>
             <Text fontSize="md" color="white" className="text">
-              Test
+              Sign Out
             </Text>
           </div>
         </div>
