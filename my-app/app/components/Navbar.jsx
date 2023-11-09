@@ -98,7 +98,7 @@ const Navbar = () => {
               Login
             </Text>
             <Text fontSize="md" color="white" className="text">
-              Sign Out
+              Logout
             </Text>
           </div>
         </div>
