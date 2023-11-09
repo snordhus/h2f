@@ -77,6 +77,8 @@ const Page = () => {
       // user.displayName
     });
     console.log("Document written with ID: ", docRef.id);
+    alert("Document written to database successfully!");
+    setFormData(initialState);
 
   }
 
