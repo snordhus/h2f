@@ -53,6 +53,13 @@ const Navbar = () => {
                 About
               </Text>
             </Link>
+            {!user ? null : (
+              <Link href="/profile">
+                <Text fontSize="md" color="white" className="text">
+                  Add Document
+                </Text>
+              </Link>
+            )}
           </div>
           <div className="middle">
             <Link href="/physical">
@@ -94,18 +101,55 @@ const Navbar = () => {
                 width="200px"
               />
             </InputGroup>
-            <Text fontSize="md" color="white" className="text">
-              Login
-            </Text>
-            <Text fontSize="md" color="white" className="text">
-              Logout
-            </Text>
+            {loading ? null : !user ? (
+              <div>
+                <div>
+                  <Text
+                    onClick={handleSignIn}
+                    fontSize="md"
+                    color="white"
+                    className="text"
+                  >
+                    Login
+                  </Text>
+                </div>
+                <div>
+                  <Text
+                    onClick={handleSignIn}
+                    fontSize="md"
+                    color="white"
+                    className="text"
+                  >
+                    Sign up
+                  </Text>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <Text
+                  onClick={handleSignOut}
+                  fontSize="md"
+                  color="white"
+                  className="text"
+                >
+                  User: {user.displayName}
+                </Text>
+                <Text
+                  onClick={handleSignOut}
+                  fontSize="md"
+                  color="white"
+                  className="text"
+                >
+                  Sign out
+                </Text>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </div>
     // <div className="h-20 w-full border-b-2 flex items-center justify-between p-2 px-2 pt-4">
-    //   <ul className="flex align-vert">
+    //   <ul className="flex align- vert">
     //     <li className="p-2 cursor-pointer">
     //       <img
     //         src="https://www.nationalguard.mil/Portals/31/Images/ng-seal-100px.png?ver=-moB4lJJKI-S1cDnzaUlfw%3d%3d"
