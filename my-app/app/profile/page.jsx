@@ -2,14 +2,16 @@
 import React, { useEffect, useState } from "react";
 import { UserAuth } from "../components/context/AuthContext";
 import Spinner from "../components/Spinner";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from '../firebase'
 
 const Page = () => {
   const { user } = UserAuth();
   const [loading, setLoading] = useState(true);
   const fields = [
-    { name: 'title', label: 'Title', placeholder: 'Enter title', labelwidth:"20%", width: '50%' },
-    { name: 'subdomain', label: 'Subdomain', placeholder: 'Enter subdomain', labelwidth:"20%", width: '60%' },
-    { name: 'keyword', label: 'Keyword', placeholder: 'Enter keyword', labelwidth:"20%", width: '60%' },
+    { name: 'title', label: 'Title', placeholder: 'Enter title', labelwidth:"20%", width: '30%' },
+    { name: 'subdomain', label: 'Subdomain', labelwidth: "20%", width: '30%' },
+    { name: 'keyword', label: 'Keyword', placeholder: 'Enter keyword', labelwidth:"20%", width: '30%' },
     { name: 'summary', label: 'Summary', placeholder: 'Enter a short summary for the document', labelwidth:"20%", width: '80%' },
     { name: 'url', label: 'url', placeholder: 'Paste the website link/url for the document', labelwidth:"20%", width: '80%' },
     // Add more fields as needed
@@ -24,6 +26,10 @@ const Page = () => {
   const labelStyle = {
     width: '80px', // Set the width of the label (e.g., 80px)
   };
+
+   // Define the options for the "subdomain" dropdown
+   const subdomainOptions = ['Physical', 'Mental', 'Nutrition', 'Sleep', 'Spiritual'];
+
 
   useEffect(() => {
     const checkAuthentication = async () => {
@@ -44,13 +50,34 @@ const Page = () => {
     const updatedFormData = { ...formData, [fieldName]: e.target.value };
     setFormData(updatedFormData);
   };
+  const handleDropdownChange = (e) => {
+    const updatedFormData = { ...formData, subdomain: e.target.value };
+    setFormData(updatedFormData);
+  };
 
   const handleFormSubmit = async () => {
 
-    const newData = {};
+    const data = {};
+
     fields.forEach((field) => {
+      console.log(field.name);
       console.log(formData[field.name]);
+      data[field.name] = formData[field.name];
     });
+    console.log(data);
+
+    // Add a new document with a generated id.
+    const docRef = await addDoc(collection(db, "documents"), {
+      title: data['title'],
+      summary: data['summary'],
+      subdomain: data['subdomain'], // Use the selected value from the dropdown
+      keywords: data['keyword'],
+      url: data['url'],
+      author: user.displayName, // You can use user.displayName if needed
+      // user.displayName
+    });
+    console.log("Document written with ID: ", docRef.id);
+
   }
 
   return (
@@ -70,14 +97,41 @@ const Page = () => {
             <label htmlFor={field.name} className="pr-2" style={{ width: field.labelwidth }}>
               {field.label}:
             </label>
-            <input
-              type="text"
-              id={field.name}
-              value={formData[field.name]}
-              onChange={(e) => handleInputChange(e, field.name)}
-              placeholder={field.placeholder}
-              style={{ width: field.width, padding: '8px', border: '1px solid #ccc', borderRadius: '4px', color: 'black' }}
-            />
+            {field.name === 'subdomain' ? (
+                    <select
+                      name={field.name}
+                      value={formData[field.name]}
+                      onChange={handleDropdownChange}
+                      style={{
+                        width: field.width,
+                        padding: '8px',
+                        border: '1px solid #ccc',
+                        borderRadius: '4px',
+                        color: 'black',
+                      }}
+                    >
+                      {subdomainOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  ) : (
+                    <input
+                      type="text"
+                      id={field.name}
+                      value={formData[field.name]}
+                      onChange={(e) => handleInputChange(e, field.name)}
+                      placeholder={field.placeholder}
+                      style={{
+                        width: field.width,
+                        padding: '8px',
+                        border: '1px solid #ccc',
+                        borderRadius: '4px',
+                        color: 'black',
+                      }}
+                    />
+                  )}
           </div>
         </div>
       ))}
