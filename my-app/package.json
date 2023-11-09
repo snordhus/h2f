@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@firebase/firestore": "^4.3.2",
     "autoprefixer": "10.4.16",
     "eslint": "8.49.0",
     "eslint-config-next": "13.5.2",
     "firebase": "^10.4.0",
     "firebase-admin": "^11.11.0",
+    "framer-motion": "^10.16.4",
     "next": "13.5.2",
     "postcss": "8.4.30",
     "react": "18.2.0",
