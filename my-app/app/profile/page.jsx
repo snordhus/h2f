@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { Input, Select } from "@chakra-ui/react";
 import { UserAuth } from "../components/context/AuthContext";
 import Spinner from "../components/Spinner";
 import { db } from '../firebase'
@@ -138,7 +139,7 @@ const Page = () => {
               {field.label}:
             </label>
             {field.name === 'subdomain' ? (
-                    <select
+                    <Select
                       name={field.name}
                       value={formData[field.name]}
                       onChange={handleDropdownChange}
@@ -151,13 +152,13 @@ const Page = () => {
                       }}
                     >
                       {subdomainOptions.map((option) => (
-                        <option key={option} value={option}>
+                        <option key={option} value={option} style={{ color: 'black' }}>
                           {option}
                         </option>
                       ))}
-                    </select>
+                    </Select>
                   ) : (
-                    <input
+                    <Input
                       type="text"
                       id={field.name}
                       value={formData[field.name]}
@@ -191,18 +192,21 @@ const Page = () => {
             <label htmlFor="emailInput" className="pr-2" style={{ width: '80px' }}>
               Email:
             </label>
-            <input
+            <Input
               type="email"
               id="emailInput"
               value={emailFormData}
               onChange={handleEmailInputChange}
               placeholder="Enter email"
+              color="black"
+              variant="unstyled"
+              colorScheme="blue"
+              isRequired
               style={{
                 width: '30%',
                 padding: '8px',
                 border: '1px solid #ccc',
                 borderRadius: '4px',
-                color: 'black',
               }}
             />
           </div>
