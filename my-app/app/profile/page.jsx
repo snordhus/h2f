@@ -2,10 +2,11 @@
 import React, { useEffect, useState } from "react";
 import { UserAuth } from "../components/context/AuthContext";
 import Spinner from "../components/Spinner";
-import { collection, addDoc } from "firebase/firestore";
 import { db } from '../firebase'
+import { doc, getDocs, collection, addDoc } from "firebase/firestore"
 
 const Page = () => {
+  const [isAuth, setIsAuth] = useState(false);
   const { user } = UserAuth();
   const [loading, setLoading] = useState(true);
   const fields = [
@@ -54,6 +55,27 @@ const Page = () => {
     const updatedFormData = { ...formData, subdomain: e.target.value };
     setFormData(updatedFormData);
   };
+  let authorizedUsers = [];
+  const Documents = async () => {
+    //const readData = async () => {
+        //try {
+          
+          if (!user) return;
+          const querySnapshot = await getDocs(collection(db, "authorizedUsers"));
+          querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            authorizedUsers.push(doc.data().email);
+            console.log(doc.data().email + " " + user.email);
+            if(user.email == doc.data().email){
+              
+               setIsAuth(true);
+               console.log(isAuth);
+            }
+          });
+          
+        //} 
+    };
+      
 
   const handleFormSubmit = async () => {
 
@@ -81,6 +103,9 @@ const Page = () => {
     setFormData(initialState);
 
   }
+  Documents();
+
+
 
   return (
     <div className="p-4">
@@ -88,6 +113,8 @@ const Page = () => {
         <Spinner />
       ) : user ? (
         <div>
+
+          { isAuth ? (<p>{user.email} is an authorized email</p>):(<p>{user.email} is not an authorized email</p>)}
         <p>
           Welcome, {user.displayName} - {user.email} - you are logged in to the profile page -
           a protected route.
