@@ -17,6 +17,7 @@ const Page = () => {
     { name: 'url', label: 'url', placeholder: 'Paste the website link/url for the document', labelwidth:"20%", width: '80%' },
     // Add more fields as needed
   ];
+  const [emailFormData, setEmailFormData] = useState('');
   const inputStyle = {
     width: '35%',
     padding: '8px',
@@ -55,6 +56,16 @@ const Page = () => {
     const updatedFormData = { ...formData, subdomain: e.target.value };
     setFormData(updatedFormData);
   };
+  
+  //form to add an additional authorized user
+  const handleEmailInputChange = (e) => {
+    setEmailFormData(e.target.value);
+  };
+  const handleEmailFormSubmit = () => {
+    console.log("Email Input:", emailFormData);
+    // You can add additional logic here if needed
+  };
+
   let authorizedUsers = [];
   const Documents = async () => {
     //const readData = async () => {
@@ -170,6 +181,41 @@ const Page = () => {
       >
         Add Document
       </button>
+
+      
+      {/* Second Form for Email */}
+      <p>Add Authorized User:</p>
+      <form>
+        <div className="mb-4">
+          <div className="flex">
+            <label htmlFor="emailInput" className="pr-2" style={{ width: '80px' }}>
+              Email:
+            </label>
+            <input
+              type="email"
+              id="emailInput"
+              value={emailFormData}
+              onChange={handleEmailInputChange}
+              placeholder="Enter email"
+              style={{
+                width: '30%',
+                padding: '8px',
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                color: 'black',
+              }}
+            />
+          </div>
+        </div>
+        <button
+          type="button"
+          onClick={handleEmailFormSubmit}
+          className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
+        >
+          Log Email
+        </button>
+      </form>
+      
     </div>
         </div>
       ) : (
