@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { UserAuth } from "./context/AuthContext";
 import { InputGroup, Input, InputLeftElement } from "@chakra-ui/react";
-import { SearchIcon } from "@chakra-ui/icons";
+//import { SearchIcon } from "@chakra-ui/icons";
 import Image from "next/image";
 import { Text } from "@chakra-ui/react";
 import loader from "./h2f_logo.png";
