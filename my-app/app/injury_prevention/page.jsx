@@ -1,4 +1,4 @@
-import { useClient } from 'next/data-client';
+"use client"
 import React from 'react'
 import { ChakraProvider, Box, Heading, Text, VStack, Container, Flex } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-ui/react';
@@ -10,7 +10,7 @@ import {
   OrderedList,
   UnorderedList,
 } from '@chakra-ui/react';
-import { MdCheckCircle, MdSettings } from 'react-icons/md';
+// import { MdCheckCircle, MdSettings } from 'react-icons/md';
 
 const Page = () => {
   return (
