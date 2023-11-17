@@ -62,8 +62,14 @@ const Page = () => {
   const handleEmailInputChange = (e) => {
     setEmailFormData(e.target.value);
   };
-  const handleEmailFormSubmit = () => {
+  const handleEmailFormSubmit = async () => {
     console.log("Email Input:", emailFormData);
+    const docRef = await addDoc(collection(db, "authorizedUsers"), {
+      email: emailFormData,
+    });
+    console.log("Email written with ID: ", docRef.id);
+    alert("New authorized user: "+emailFormData+" successfully added")
+    setEmailFormData('');
     // You can add additional logic here if needed
   };
 
