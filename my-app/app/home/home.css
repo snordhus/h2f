@@ -1,0 +1,144 @@
+.home-parent {
+  height: fit-content;
+  background-color: white;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  margin-bottom: 30px;
+}
+
+.hero {
+  width: 100%;
+  height: 400px;
+  background-color: #d9d9d9;
+}
+
+.sectors {
+  width: 100%;
+  height: 900px;
+  background-color: white;
+}
+
+.sectors-header {
+  color: #f4c430 !important;
+  text-align: center;
+}
+
+.sectors-grid-parent {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.item {
+  height: 300px;
+  width: auto;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sectors-grid {
+  width: 80%;
+  height: 100%;
+  /* border: 1px solid black; */
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 100px;
+}
+
+.sectors-placeholder-image {
+  height: 80%;
+  width: 100%;
+  background-color: #d9d9d9;
+}
+
+.sectors-text {
+  color: #f4c430 !important;
+  text-align: center;
+}
+
+.description {
+  width: 100%;
+  height: 700px;
+  background-color: #d9d9d9;
+}
+
+.description-parent {
+  padding-left: 100px;
+  padding-top: 150px;
+}
+
+.description-header {
+  margin-bottom: 40px;
+}
+
+.description-sub-header {
+  color: #f4c430 !important;
+  margin-bottom: 40px;
+}
+
+.description-paragraph {
+  width: 80%;
+}
+
+.images {
+  width: 100%;
+  height: 600px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.images-parent {
+  padding-top: 100px;
+  height: 100%;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  gap: 15px;
+}
+
+.image-holder {
+  background-color: #d9d9d9;
+  height: 400px;
+  width: auto;
+}
+
+.right-arrow,
+.left-arrow {
+  background-color: #d9d9d9;
+  height: 40px;
+  width: 40px;
+}
+
+.right-arrow-parent,
+.left-arrow-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-parent {
+  padding-top: 30px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 20px;
+}
+
+.footer Text {
+  margin-bottom: 10px !important;
+  margin-top: 0 !important;
+}

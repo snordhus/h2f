@@ -2,17 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  color: white !important;
+}
+
 :root {
   --foreground-rgb: 59, 57, 57;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb:  59, 57, 57;
-    --background-end-rgb:  59, 57, 57;
+    --background-start-rgb: 59, 57, 57;
+    --background-end-rgb: 59, 57, 57;
   }
 }
 
@@ -26,7 +30,7 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-button{
+button {
   background-color: aqua;
 }
 

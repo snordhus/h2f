@@ -4,9 +4,9 @@ import Documents from './Documents';
 export default function Home() {
   return (
     <main className="p-4">
-      <h1>Firestore Documents</h1>
-      <Documents />
       <h1 class="text-4xl pb-8">H2F Documents:</h1>
+      <Documents />
+      
 
       <div class="pl-8 mb-8">
         <a class="text-2xl bg-blue-500 hover:bg-red-500" href="https://www.hprc-online.org/" target="_blank" rel="noreferrer noopener">
