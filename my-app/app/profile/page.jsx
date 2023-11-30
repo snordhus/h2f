@@ -13,7 +13,7 @@ const Page = () => {
   const fields = [
     { name: 'title', label: 'Title', placeholder: 'Enter title', labelwidth:"20%", width: '30%' },
     { name: 'subdomain', label: 'Subdomain', labelwidth: "20%", width: '30%' },
-    { name: 'keyword', label: 'Keyword', placeholder: 'Enter keyword', labelwidth:"20%", width: '30%' },
+    { name: 'keyword', label: 'Keywords (seaparate each by a comma and space: ", ")', placeholder: 'Enter keywords...  ex: (word1, word2, word3)', labelwidth:"20%", width: '30%' },
     { name: 'summary', label: 'Summary', placeholder: 'Enter a short summary for the document', labelwidth:"20%", width: '80%' },
     { name: 'url', label: 'url', placeholder: 'Paste the website link/url for the document', labelwidth:"20%", width: '80%' },
     // Add more fields as needed
@@ -111,7 +111,7 @@ const Page = () => {
       title: data['title'],
       summary: data['summary'],
       subdomain: data['subdomain'], // Use the selected value from the dropdown
-      keywords: new Array(data['keyword']),
+      keywords: data['keyword'].split(', '),
       url: data['url'],
       author: user.displayName, // You can use user.displayName if needed
       // user.displayName
