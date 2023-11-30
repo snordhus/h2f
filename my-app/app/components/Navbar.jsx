@@ -46,7 +46,7 @@ const Navbar = () => {
     e.preventDefault();
     console.log("search");
     // Check if the query is not empty before navigating
-    
+    console.log("Query:", query);
     router.push(`/search?search=${query}`);
     
   };
@@ -101,7 +101,6 @@ const Navbar = () => {
               size="md"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSearch(e)}
             />
           </form>
         </li>
