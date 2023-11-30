@@ -5,7 +5,9 @@
 * {
   color: white !important;
 }
-
+option  {
+  color: black !important;
+}
 :root {
   --foreground-rgb: 59, 57, 57;
   --background-start-rgb: 214, 219, 220;
