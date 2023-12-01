@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div id="root" class="bodyWithMargins">
+        <div id="root" className="bodyWithMargins">
           <ChakraProvider>
             <AuthContextProvider>
               <Navbar />

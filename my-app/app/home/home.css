@@ -1,6 +1,6 @@
 .home-parent {
   height: fit-content;
-  background-color: white;
+  background-color: #fafafa;
   border-left: 1px solid black;
   border-right: 1px solid black;
   margin-bottom: 30px;
@@ -10,12 +10,29 @@
   width: 100%;
   height: 400px;
   background-color: #d9d9d9;
+  position: relative;
+}
+
+.hero-image {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+  filter: brightness(50%);
+}
+
+.hero-text {
+  position: absolute;
+  font-size: 2.5em !important;
+  top: 40%;
+  left: 30%;
+  z-index: 5 !important;
+  color: white !important;
 }
 
 .sectors {
   width: 100%;
-  height: 900px;
-  background-color: white;
+  height: 800px;
+  background-color: #fafafa;
 }
 
 .sectors-header {
@@ -46,13 +63,27 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 100px;
+  gap: 50px;
+  row-gap: 30px;
 }
 
 .sectors-placeholder-image {
-  height: 80%;
+  height: 200px;
   width: 100%;
   background-color: #d9d9d9;
+}
+
+.sector-image {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+  filter: brightness(90%);
+  transition: 0.5s ease all;
+}
+
+.sector-image:hover {
+  filter: brightness(60%);
+  cursor: pointer;
 }
 
 .sectors-text {
@@ -63,7 +94,8 @@
 .description {
   width: 100%;
   height: 700px;
-  background-color: #d9d9d9;
+  background-color: #272729;
+  color: white !important;
 }
 
 .description-parent {
@@ -87,7 +119,7 @@
 .images {
   width: 100%;
   height: 600px;
-  background-color: white;
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
 }
@@ -101,6 +133,13 @@
   gap: 15px;
 }
 
+.image-carousel {
+  object-fit: cover;
+  width: 100%;
+  height: inherit;
+  filter: brightness(80%);
+}
+
 .image-holder {
   background-color: #d9d9d9;
   height: 400px;
@@ -109,9 +148,16 @@
 
 .right-arrow,
 .left-arrow {
-  background-color: #d9d9d9;
+  /* background-color: #d9d9d9; */
   height: 40px;
   width: 40px;
+  transition: 0.5s ease all;
+}
+
+.right-arrow:hover,
+.left-arrow:hover {
+  cursor: pointer;
+  color: #f4c430 !important;
 }
 
 .right-arrow-parent,
@@ -125,9 +171,10 @@
 .footer {
   width: 100%;
   height: 300px;
-  background-color: #d9d9d9;
+  background-color: #272729;
   display: flex;
   justify-content: center;
+  color: white !important;
 }
 
 .footer-parent {
@@ -141,4 +188,16 @@
 .footer Text {
   margin-bottom: 10px !important;
   margin-top: 0 !important;
+  text-align: center !important;
+}
+
+.footer-header {
+  text-align: center !important;
+  margin-bottom: 30px;
+  color: #f4c430 !important;
+}
+
+.footer-text {
+  text-align: center;
+  margin-bottom: 10px;
 }
