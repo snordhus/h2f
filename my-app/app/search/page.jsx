@@ -12,13 +12,14 @@ const Page = () => {
   useEffect(() => {
     const fetchData = async () => {
       const searchQuery = searchParams.get('search');
-      setQ(searchQuery);
+      const lowercaseSearchQuery = searchQuery.toLowerCase();
+      setQ(lowercaseSearchQuery);
 
       const querySnapshot = await getDocs(collection(db, "documents"));
       const filteredDocs = [];
 
       querySnapshot.forEach((doc) => {
-        if (doc.data().keywords.includes(searchQuery)) {
+        if (doc.data().keywords.includes(lowercaseSearchQuery)) {
           filteredDocs.push(doc);
         }
       });
@@ -55,3 +56,4 @@ const Page = () => {
 };
 
 export default Page;
+

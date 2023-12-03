@@ -138,7 +138,7 @@ const Page = () => {
       title: data["title"],
       summary: data["summary"],
       subdomain: data["subdomain"], // Use the selected value from the dropdown
-      keywords: data["keyword"].split(", "),
+      keywords: (data["keyword"].toLowerCase()).split(", "),
       url: data["url"],
       author: user.displayName, // You can use user.displayName if needed
       // user.displayName
