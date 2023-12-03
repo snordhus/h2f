@@ -94,7 +94,7 @@ const Navbar = () => {
                 Sleep
               </Text>
             </Link>
-            <Link href="/spirtual">
+            <Link href="/spiritual">
               <Text fontSize="md" color="white" className="text">
                 Spirtual
               </Text>
