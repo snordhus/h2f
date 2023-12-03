@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
+* {
   color: white !important;
-} */
+}
 option  {
   color: black !important;
 }
