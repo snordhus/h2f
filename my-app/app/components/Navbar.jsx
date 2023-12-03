@@ -99,6 +99,11 @@ const Navbar = () => {
                 Spirtual
               </Text>
             </Link>
+            <Link href="/all">
+              <Text fontSize="md" color="white" className="text">
+                All
+              </Text>
+            </Link>
           </div>
           <div className="right">
             <form onSubmit={handleSearch}>

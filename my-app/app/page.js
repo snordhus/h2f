@@ -1,11 +1,11 @@
 import Image from 'next/image'
-import Documents from './Documents';
+import { redirect } from 'next/navigation';
 
 export default function Home() {
+  redirect('/home');
   return (
     <main className="p-4">
       <h1 class="text-4xl pb-8">H2F Documents:</h1>
-      <Documents />
       
 
       <div class="pl-8 mb-8">
