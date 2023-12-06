@@ -74,7 +74,11 @@ const Page = () => {
 
   const initialState = {};
   fields.forEach((field) => {
-    initialState[field.name] = "";
+    if (field.name !== "subdomain") {
+      initialState[field.name] = "";
+    }else{
+      initialState[field.name] = "Physical";
+    }
   });
 
   const [formData, setFormData] = useState(initialState);

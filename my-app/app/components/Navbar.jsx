@@ -96,7 +96,7 @@ const Navbar = () => {
             </Link>
             <Link href="/spiritual">
               <Text fontSize="md" color="white" className="text">
-                Spirtual
+                Spiritual
               </Text>
             </Link>
             <Link href="/all">
