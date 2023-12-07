@@ -35,8 +35,8 @@ const Documents = async ({ domain }) => {
       <div className="documents-parent">
         <div className="documents">
           {docs.map((doc) => (
-            <Link href={doc.data().url} target="_blank">
-              <div key={doc.id} className="documents-item">
+            <Link key={doc.id} href={doc.data().url} target="_blank">
+              <div className="documents-item">
                 <Text fontSize="medium" className="documents-item-title">
                   {doc.data().title}
                 </Text>

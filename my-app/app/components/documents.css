@@ -2,6 +2,8 @@
   height: 800px;
   background-color: white;
   width: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
 
 .documents-header {
@@ -26,8 +28,8 @@
   height: fit-content;
   padding-left: 5%;
   padding-right: 5%;
-  grid-template-columns: 30% 30% 30%;
-  column-gap: 30px;
+  grid-template-columns: 25% 25% 25%;
+  column-gap: 100px;
   row-gap: 50px;
 }
 
