@@ -1,36 +1,10 @@
 "use client";
+import "./Footer.css";
 import React from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
-import hero from "./images/hero2.webp";
 import { Text } from "@chakra-ui/react";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import { useRef } from "react";
-import "./physical.css";
 
-// let currentImage = all;
-// let images = [mental, spiritual, all, physical, nutrition, sleep];
-
-function Physical() {
-  const imageRef = useRef();
-  const router = useRouter();
-
-  return <div className="physical-parent">{getHero()}</div>;
-}
-
-function getHero() {
-  return (
-    <div className="hero">
-      <Text className="hero-text" fontSize="x-large">
-        Physical
-      </Text>
-      <Image src={hero} alt="national-guard" className="hero-image"></Image>
-    </div>
-  );
-}
-
-function getFooter() {
+const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-parent">
@@ -106,6 +80,6 @@ function getFooter() {
       </div>
     </div>
   );
-}
+};
 
-export default Physical;
+export default Footer;

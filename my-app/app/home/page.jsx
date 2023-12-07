@@ -28,7 +28,7 @@ function Home() {
       {getSectors(router)}
       {getDescription()}
       {getImages(imageRef)}
-      {getFooter()}
+      {/* {getFooter()} */}
     </div>
   );
 }
