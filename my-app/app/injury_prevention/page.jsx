@@ -1,4 +1,4 @@
-"use client"
+//import { useClient } from 'next/data-client';
 import React from 'react'
 import { ChakraProvider, Box, Heading, Text, VStack, Container, Flex } from '@chakra-ui/react';
 import { Tabs, TabList, TabPanels, Tab, TabPanel, TabIndicator } from '@chakra-ui/react';
@@ -10,7 +10,7 @@ import {
   OrderedList,
   UnorderedList,
 } from '@chakra-ui/react';
-// import { MdCheckCircle, MdSettings } from 'react-icons/md';
+//import { MdCheckCircle, MdSettings } from 'react-icons/md';
 
 const Page = () => {
   return (
@@ -25,11 +25,11 @@ const Page = () => {
       </Box>
 
       <Box bg="white" color="black" p={2} h='250px' display="flex" alignItems="center">
-        <Container maxW="container.lg" border="1px solid black" borderRadius="md" p={4}>
-          <Heading as="h3" size="lg">
+        <Container color="black" maxW="container.lg" border="1px solid black" borderRadius="md" p={4}>
+          <Heading color="blue.500" as="h3" size="lg">
             Summary
           </Heading>
-          <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Text>
+          <Text color="blue.500">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </Text>
         </Container>
       </Box>
 
