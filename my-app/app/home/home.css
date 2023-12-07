@@ -38,6 +38,7 @@
 .sectors-header {
   color: #f4c430 !important;
   text-align: center;
+  font-weight: bold;
 }
 
 .sectors-grid-parent {

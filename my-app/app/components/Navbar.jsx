@@ -60,11 +60,6 @@ const Navbar = () => {
                 Home
               </Text>
             </Link>
-            <Link href="/about">
-              <Text fontSize="md" color="white" className="text">
-                About
-              </Text>
-            </Link>
             {!user ? null : (
               <Link href="/profile">
                 <Text fontSize="md" color="white" className="text">
@@ -99,11 +94,11 @@ const Navbar = () => {
                 Spiritual
               </Text>
             </Link>
-            <Link href="/all">
+            {/* <Link href="/all">
               <Text fontSize="md" color="white" className="text">
                 All
               </Text>
-            </Link>
+            </Link> */}
           </div>
           <div className="right">
             <form onSubmit={handleSearch}>
@@ -112,13 +107,14 @@ const Navbar = () => {
                   <SearchIcon color="white" />
                 </InputLeftElement>
                 <Input
+                  htmlSize={25}
                   placeholder="Search"
                   size="md"
                   _placeholder={{ color: "white" }}
                   focusBorderColor="black"
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  width="200px"
+                  width="auto"
                   className="search-box"
                 />
               </InputGroup>

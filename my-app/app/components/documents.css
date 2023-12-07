@@ -1,0 +1,55 @@
+.documents-parent-container {
+  height: 800px;
+  background-color: white;
+  width: 100%;
+}
+
+.documents-header {
+  color: #f4c430;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.documents-parent {
+  width: 100%;
+  color: white !important;
+  display: flex;
+  justify-content: center;
+}
+
+.documents {
+  padding-top: 75px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  height: fit-content;
+  padding-left: 5%;
+  padding-right: 5%;
+  grid-template-columns: 30% 30% 30%;
+  column-gap: 30px;
+  row-gap: 50px;
+}
+
+.documents-item {
+  width: 200px;
+  height: 200px;
+  background-color: #272729;
+  text-align: center;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  transition: all 0.5s ease;
+}
+
+.documents-item:hover {
+  background-color: #515157;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.documents-item-title {
+  font-weight: bold;
+  color: #f4c430;
+  margin-bottom: 10px;
+}
