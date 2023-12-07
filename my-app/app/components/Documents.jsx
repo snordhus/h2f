@@ -7,14 +7,13 @@ import "./documents.css";
 
 const Documents = async ({ domain }) => {
   let all = false;
-  if (domain == "") {
+  if (domain == "all") {
     all = true;
   }
   const docs = [];
   const querySnapshot = await getDocs(collection(db, "documents"));
   querySnapshot.forEach((doc) => {
     const subdomain = doc.data().subdomain.toLowerCase();
-    console.log(doc);
     if (all) {
       docs.push(doc);
     } else if (subdomain == domain) {
@@ -24,9 +23,15 @@ const Documents = async ({ domain }) => {
 
   return (
     <div className="documents-parent-container">
-      <Text fontSize="xx-large" className="documents-header">
-        Resources for the {domain} Pillar
-      </Text>
+      {all == true ? (
+        <Text fontSize="xx-large" className="documents-header">
+          Resources for all domains of H2F
+        </Text>
+      ) : (
+        <Text fontSize="xx-large" className="documents-header">
+          Resources for the {domain} Pillar
+        </Text>
+      )}
       <div className="documents-parent">
         <div className="documents">
           {docs.map((doc) => (
