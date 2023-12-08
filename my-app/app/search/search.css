@@ -9,6 +9,16 @@
   align-items: center;
   flex-direction: column;
   padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.title-hover {
+  transition: all 0.5s ease;
+}
+
+.title-hover:hover {
+  color: #f4c430;
 }
 
 Input,

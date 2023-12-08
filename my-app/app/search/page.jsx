@@ -5,6 +5,7 @@ import { db } from "./../firebase";
 import { Text } from "@chakra-ui/react";
 import { getDocs, collection } from "firebase/firestore";
 import "./search.css";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const Page = () => {
   const [docs, setDocs] = useState([]);
@@ -43,19 +44,20 @@ const Page = () => {
         {docs.map((doc) => (
           <li key={doc.id} className="mb-8">
             <a
-              className="text-2xl"
+              className="text-2xl title-hover"
               href={doc.data().url}
               target="_blank"
               rel="noreferrer noopener"
             >
               {doc.data().title}
+              <ExternalLinkIcon />
             </a>
             <div className="pl-8">
               <h4> <b>Subdomain: </b>{doc.data().subdomain}</h4>
               <h4> <b>Keywords: </b>{doc.data().keywords.join(", ")}</h4>
               <h4><b>Synopsis: </b></h4>
               <p className="pl-8">{doc.data().summary}</p>
-              <p>Contact a Specialist:</p>
+              {/* <p>Contact a Specialist:</p> */}
             </div>
           </li>
         ))}
