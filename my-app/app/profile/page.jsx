@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Input, Select } from "@chakra-ui/react";
+import { Textarea, Input, Select } from "@chakra-ui/react";
 import { UserAuth } from "../components/context/AuthContext";
 import Spinner from "../components/Spinner";
 import { db } from "../firebase";
@@ -317,12 +317,13 @@ const Page = () => {
                 </Text>
                 <br></br>
                 <Text fontSize="md" color="black" className="menu-text">
-                  You are logged in to the profile page - a protected route.
+                  Email: {user.email}
                 </Text>
                 <br></br>
                 <Text fontSize="md" color="black" className="menu-text">
-                  Email: {user.email}
+                  You are logged in to the profile page - a protected route.
                 </Text>
+
                 <br></br>
                 {isAuth ? (
                   <Text fontSize="md" color="black" className="menu-text">
@@ -350,11 +351,12 @@ const Page = () => {
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
-            <form>
+            <form onSubmit={handleFormSubmit}>
               <FormControl isRequired>
                 <FormLabel>Document Title</FormLabel>
                 <Input type="text" />
               </FormControl>
+              <br></br>
               <FormControl isRequired>
                 <FormLabel>Subdomain</FormLabel>
                 <Select>
@@ -365,6 +367,37 @@ const Page = () => {
                   <option value="spiritual">Spiritual</option>
                 </Select>
               </FormControl>
+              <br></br>
+              <FormControl isRequired>
+                <FormLabel>Document Keywords</FormLabel>
+                <Input type="text" placeholder="ex:(word1, word2)" />
+                <FormHelperText>
+                  Seperate each keyword by a space and comma
+                </FormHelperText>
+              </FormControl>
+              <br></br>
+              <FormControl isRequired>
+                <FormLabel>Document Summary</FormLabel>
+                <Textarea placeholder="Summary" />
+                <FormHelperText>
+                  Enter a quick summary of the document
+                </FormHelperText>
+              </FormControl>
+              <br></br>
+              <FormControl isRequired>
+                <FormLabel>Document URL</FormLabel>
+                <Input type="text" placeholder="" />
+                <FormHelperText>
+                  This URL should be publicly available for anyone
+                </FormHelperText>
+              </FormControl>
+              <br></br>
+              <button
+                onClick={handleFormSubmit}
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+              >
+                Add Document
+              </button>
             </form>
           </AccordionPanel>
         </AccordionItem>
@@ -379,9 +412,23 @@ const Page = () => {
           </h2>
           <AccordionPanel pb={4}>
             {isAuth ? (
-              <Text fontSize="md" color="black" className="menu-text">
-                You are an authorized user. You can add authorized users
-              </Text>
+              <form onSubmit={handleEmailFormSubmit}>
+                <FormControl isRequired>
+                  <FormLabel>Add Email</FormLabel>
+                  <Input type="email" placeholder="Email" />
+                  <FormHelperText>
+                    Enter a user's email to make them an authorized user
+                  </FormHelperText>
+                </FormControl>
+                <br></br>
+                <button
+                  type="button"
+                  onClick={handleEmailFormSubmit}
+                  className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
+                >
+                  Log Email
+                </button>
+              </form>
             ) : (
               <Text fontSize="md" color="black" className="menu-text">
                 You are not an authorized user, and can not add authorized

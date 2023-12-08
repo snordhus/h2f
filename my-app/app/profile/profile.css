@@ -16,6 +16,10 @@ Select {
   color: black !important;
 }
 
+.summary {
+  height: 100px !important;
+}
+
 .box {
   margin-top: 50px;
   border: 1px solid #272729;
