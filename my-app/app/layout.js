@@ -8,8 +8,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "H2F Documents- National Guard",
+  title: "H2F - National Guard",
   description: "Created by WashU Students",
+  icons: {
+    icon: "./favicon.png", // /public path
+  },
 };
 
 export default function RootLayout({ children }) {
