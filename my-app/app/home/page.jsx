@@ -222,7 +222,7 @@ function getImages(imageRef) {
       <div className="images-parent">
         <div className="left-arrow-parent">
           <div className="left-arrow">
-            <ChevronLeftIcon boxSize={10} onClick={leftImage} />
+            <ChevronLeftIcon boxSize={40} onClick={leftImage} />
           </div>
         </div>
         <div className="image-holder">
@@ -235,7 +235,7 @@ function getImages(imageRef) {
         </div>
         <div className="right-arrow-parent">
           <div className="right-arrow">
-            <ChevronRightIcon boxSize={10} onClick={rightImage} />
+            <ChevronRightIcon boxSize={40} onClick={rightImage} />
           </div>
         </div>
       </div>

@@ -1,3 +1,48 @@
-.p-4 {
-  color: white !important;
+.add-document-parent {
+  background-color: #272729 !important;
+  font-family: "Montserrat", sans-serif !important;
+  color: black !important;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 100px;
+}
+
+Input,
+Select {
+  color: black !important;
+}
+
+.box {
+  margin-top: 50px;
+  border: 1px solid #272729;
+  background-color: white !important;
+  height: fit-content;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 700px;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.add-header {
+  font-weight: bold;
+  text-align: center;
+  color: #f4c430;
+}
+
+.box-header {
+  color: #f4c430;
+  font-weight: 700;
+}
+
+.accord {
+  width: 100%;
 }

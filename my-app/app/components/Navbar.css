@@ -53,6 +53,10 @@
   transition: all 0.5s ease;
 }
 
+.menu-text-profile {
+  color: black !important;
+}
+
 .text:hover {
   color: white !important;
 }

@@ -30,4 +30,9 @@
 .footer-text {
   text-align: center;
   margin-bottom: 10px;
+  transition: all 0.5s ease;
+}
+
+.footer-text:hover {
+  color: #f4c430 !important;
 }

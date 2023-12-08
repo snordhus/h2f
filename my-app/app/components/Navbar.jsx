@@ -60,13 +60,13 @@ const Navbar = () => {
                 Home
               </Text>
             </Link>
-            {!user ? null : (
+            {/* {!user ? null : (
               <Link href="/profile">
                 <Text fontSize="md" color="white" className="text">
                   Add Documents
                 </Text>
               </Link>
-            )}
+            )} */}
           </div>
           <div className="middle">
             <Link href="/physical">
@@ -154,11 +154,17 @@ const Navbar = () => {
                   </Text>
                 </MenuButton>
                 <MenuList>
-                  <MenuItem>
-                    <Text fontSize="md" color="white" className="menu-text">
-                      User: {user.displayName}
-                    </Text>
-                  </MenuItem>
+                  <Link href="./profile">
+                    <MenuItem className="menu-text-profile">
+                      <Text
+                        fontSize="md"
+                        color="white"
+                        className="menu-text-profile"
+                      >
+                        {user.displayName}
+                      </Text>
+                    </MenuItem>
+                  </Link>
                   <MenuItem onClick={handleSignOut}>
                     <Text fontSize="md" color="white" className="menu-text">
                       Sign Out
