@@ -77,7 +77,12 @@
   width: inherit;
   height: inherit;
   filter: brightness(90%);
-  transition: 0.5s ease all;
+}
+
+.sector-image:hover {
+  pointer-events: none;
+  border-radius: 0;
+  cursor: default;
 }
 
 .sub-header-text {
