@@ -1,29 +1,37 @@
-"use client";
+import { useState, useEffect } from "react";
 import { db } from "../firebase.js";
-import { doc, getDocs, collection } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { Text } from "@chakra-ui/react";
 import Link from "next/link.js";
 import "./documents.css";
 
-const Documents = async ({ domain }) => {
-  let all = false;
-  if (domain == "all") {
-    all = true;
-  }
-  const docs = [];
-  const querySnapshot = await getDocs(collection(db, "documents"));
-  querySnapshot.forEach((doc) => {
-    const subdomain = doc.data().subdomain.toLowerCase();
-    if (all) {
-      docs.push(doc);
-    } else if (subdomain == domain) {
-      docs.push(doc);
-    }
-  });
+const Documents = ({ domain }) => {
+  const [docs, setDocs] = useState([]);
+  const [all, setAll] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (domain === "all") {
+        setAll(true);
+      }
+
+      const querySnapshot = await getDocs(collection(db, "documents"));
+      const newDocs = [];
+      querySnapshot.forEach((doc) => {
+        const subdomain = doc.data().subdomain.toLowerCase();
+        if (all || subdomain === domain) {
+          newDocs.push(doc);
+        }
+      });
+      setDocs(newDocs);
+    };
+
+    fetchData();
+  }, [domain, all]);
 
   return (
     <div className="documents-parent-container">
-      {all == true ? (
+      {all === true ? (
         <Text fontSize="xx-large" className="documents-header">
           Resources for all domains of H2F
         </Text>
