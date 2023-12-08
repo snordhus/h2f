@@ -36,14 +36,37 @@
 
 .documents-item {
   width: 250px;
-  height: 200px;
+  height: 250px;
   background-color: #272729;
+  text-align: center;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px !important;
+  transition: all 0.5s ease;
+  margin-left: 10px;
+}
+
+.documents-item-hidden {
+  width: 250px;
+  height: 200px;
+  color: white !important;
+  background-color: white;
   text-align: center;
   padding-left: 10px;
   padding-top: 10px;
   padding-right: 10px;
   transition: all 0.5s ease;
   margin-left: 10px;
+  display: hidden !important;
+  pointer-events: none !important;
+  cursor: default !important;
+}
+
+.documents-item-title-hidden {
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
 }
 
 .documents-item:hover {

@@ -45,7 +45,11 @@ const Documents = ({ domain }) => {
           {docs.map((doc) => (
             <Link key={doc.id} href={doc.data().url} target="_blank">
               <div className="documents-item">
-                <Text fontSize="medium" className="documents-item-title" noOfLines={2}>
+                <Text
+                  fontSize="medium"
+                  className="documents-item-title"
+                  noOfLines={1.5}
+                >
                   {doc.data().title}
                 </Text>
                 <Text
@@ -58,6 +62,60 @@ const Documents = ({ domain }) => {
               </div>
             </Link>
           ))}
+          {docs.length <= 3 ? (
+            <>
+              <div className="documents-item-hidden">
+                <Text
+                  fontSize="medium"
+                  className="documents-item-title-hidden"
+                  noOfLines={2}
+                >
+                  Empty
+                </Text>
+                <Text
+                  fontSize="small"
+                  noOfLines={7}
+                  className="documents-item-summary"
+                >
+                  Empty
+                </Text>
+              </div>
+              <div className="documents-item-hidden">
+                <Text
+                  fontSize="medium"
+                  className="documents-item-title-hidden"
+                  noOfLines={2}
+                >
+                  Empty
+                </Text>
+                <Text
+                  fontSize="small"
+                  noOfLines={7}
+                  className="documents-item-summary"
+                >
+                  Empty
+                </Text>
+              </div>
+              <div className="documents-item-hidden">
+                <Text
+                  fontSize="medium"
+                  className="documents-item-title-hidden"
+                  noOfLines={2}
+                >
+                  Empty
+                </Text>
+                <Text
+                  fontSize="small"
+                  noOfLines={7}
+                  className="documents-item-summary"
+                >
+                  Empty
+                </Text>
+              </div>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </div>
