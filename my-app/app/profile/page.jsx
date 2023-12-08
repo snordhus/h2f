@@ -172,128 +172,128 @@ const Page = () => {
   };
   Documents();
 
-  const getOldProfile = () => {
-    return (
-      <div className="p-4">
-        {loading ? (
-          <Spinner />
-        ) : user ? (
-          <div>
-            {isAuth ? (
-              <p>{user.email} is an authorized email</p>
-            ) : (
-              <p>{user.email} is not an authorized email</p>
-            )}
-            <p>
-              Welcome, {user.displayName} - {user.email} - you are logged in to
-              the profile page - a protected route.
-            </p>
-            <div className="space-y-4">
-              {fields.map((field, index) => (
-                <div className="mb-4" key={index}>
-                  <div className="flex">
-                    <label
-                      htmlFor={field.name}
-                      className="pr-2"
-                      style={{ width: field.labelwidth }}
-                    >
-                      {field.label}:
-                    </label>
-                    {field.name === "subdomain" ? (
-                      <Select
-                        name={field.name}
-                        value={formData[field.name]}
-                        onChange={handleDropdownChange}
-                        style={{
-                          width: field.width,
-                          padding: "8px",
-                          border: "1px solid #ccc",
-                          borderRadius: "4px",
-                          color: "black",
-                        }}
-                      >
-                        {subdomainOptions.map((option) => (
-                          <option
-                            key={option}
-                            value={option}
-                            style={{ color: "black" }}
-                          >
-                            {option}
-                          </option>
-                        ))}
-                      </Select>
-                    ) : (
-                      <Input
-                        type="text"
-                        id={field.name}
-                        value={formData[field.name]}
-                        onChange={(e) => handleInputChange(e, field.name)}
-                        placeholder={field.placeholder}
-                        style={{
-                          width: field.width,
-                          padding: "8px",
-                          border: "1px solid #ccc",
-                          borderRadius: "4px",
-                          color: "black",
-                        }}
-                      />
-                    )}
-                  </div>
-                </div>
-              ))}
-              <button
-                onClick={handleFormSubmit}
-                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
-              >
-                Add Document
-              </button>
+  // const getOldProfile = () => {
+  //   return (
+  //     <div className="p-4">
+  //       {loading ? (
+  //         <Spinner />
+  //       ) : user ? (
+  //         <div>
+  //           {isAuth ? (
+  //             <p>{user.email} is an authorized email</p>
+  //           ) : (
+  //             <p>{user.email} is not an authorized email</p>
+  //           )}
+  //           <p>
+  //             Welcome, {user.displayName} - {user.email} - you are logged in to
+  //             the profile page - a protected route.
+  //           </p>
+  //           <div className="space-y-4">
+  //             {fields.map((field, index) => (
+  //               <div className="mb-4" key={index}>
+  //                 <div className="flex">
+  //                   <label
+  //                     htmlFor={field.name}
+  //                     className="pr-2"
+  //                     style={{ width: field.labelwidth }}
+  //                   >
+  //                     {field.label}:
+  //                   </label>
+  //                   {field.name === "subdomain" ? (
+  //                     <Select
+  //                       name={field.name}
+  //                       value={formData[field.name]}
+  //                       onChange={handleDropdownChange}
+  //                       style={{
+  //                         width: field.width,
+  //                         padding: "8px",
+  //                         border: "1px solid #ccc",
+  //                         borderRadius: "4px",
+  //                         color: "black",
+  //                       }}
+  //                     >
+  //                       {subdomainOptions.map((option) => (
+  //                         <option
+  //                           key={option}
+  //                           value={option}
+  //                           style={{ color: "black" }}
+  //                         >
+  //                           {option}
+  //                         </option>
+  //                       ))}
+  //                     </Select>
+  //                   ) : (
+  //                     <Input
+  //                       type="text"
+  //                       id={field.name}
+  //                       value={formData[field.name]}
+  //                       onChange={(e) => handleInputChange(e, field.name)}
+  //                       placeholder={field.placeholder}
+  //                       style={{
+  //                         width: field.width,
+  //                         padding: "8px",
+  //                         border: "1px solid #ccc",
+  //                         borderRadius: "4px",
+  //                         color: "black",
+  //                       }}
+  //                     />
+  //                   )}
+  //                 </div>
+  //               </div>
+  //             ))}
+  //             <button
+  //               onClick={handleFormSubmit}
+  //               className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+  //             >
+  //               Add Document
+  //             </button>
 
-              {/* Second Form for Email */}
-              <p>Add Authorized User:</p>
-              <form>
-                <div className="mb-4">
-                  <div className="flex">
-                    <label
-                      htmlFor="emailInput"
-                      className="pr-2"
-                      style={{ width: "80px" }}
-                    >
-                      Email:
-                    </label>
-                    <Input
-                      type="email"
-                      value={emailFormData}
-                      onChange={handleEmailInputChange}
-                      placeholder="Enter email"
-                      color="black"
-                      variant="unstyled"
-                      colorScheme="blue"
-                      isRequired
-                      style={{
-                        width: "30%",
-                        padding: "8px",
-                        border: "1px solid #ccc",
-                        borderRadius: "4px",
-                      }}
-                    />
-                  </div>
-                </div>
-                <button
-                  type="button"
-                  onClick={handleEmailFormSubmit}
-                  className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
-                >
-                  Log Email
-                </button>
-              </form>
-            </div>
-          </div>
-        ) : (
-          <p>You must be logged in to view this page - protected route.</p>
-        )}
-      </div>
-    );
-  };
+  //             {/* Second Form for Email */}
+  //             <p>Add Authorized User:</p>
+  //             <form>
+  //               <div className="mb-4">
+  //                 <div className="flex">
+  //                   <label
+  //                     htmlFor="emailInput"
+  //                     className="pr-2"
+  //                     style={{ width: "80px" }}
+  //                   >
+  //                     Email:
+  //                   </label>
+  //                   <Input
+  //                     type="email"
+  //                     value={emailFormData}
+  //                     onChange={handleEmailInputChange}
+  //                     placeholder="Enter email"
+  //                     color="black"
+  //                     variant="unstyled"
+  //                     colorScheme="blue"
+  //                     isRequired
+  //                     style={{
+  //                       width: "30%",
+  //                       padding: "8px",
+  //                       border: "1px solid #ccc",
+  //                       borderRadius: "4px",
+  //                     }}
+  //                   />
+  //                 </div>
+  //               </div>
+  //               <button
+  //                 type="button"
+  //                 onClick={handleEmailFormSubmit}
+  //                 className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600"
+  //               >
+  //                 Log Email
+  //               </button>
+  //             </form>
+  //           </div>
+  //         </div>
+  //       ) : (
+  //         <p>You must be logged in to view this page - protected route.</p>
+  //       )}
+  //     </div>
+  //   );
+  // };
 
   const getAccordian = () => {
     return (
@@ -352,6 +352,7 @@ const Page = () => {
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4}>
+          {isAuth ? (
             <form onSubmit={handleFormSubmit}>
               <FormControl isRequired>
                 <FormLabel>Document Title</FormLabel>
@@ -400,6 +401,13 @@ const Page = () => {
                 Add Document
               </button>
             </form>
+            ) : (
+              <Text fontSize="md" color="black" className="menu-text">
+                You are not an authorized user, and can not add authorized
+                users. If this is wrong, please contact
+                brian.r.harder.mil@army.mil to change this
+              </Text>
+            )}
           </AccordionPanel>
         </AccordionItem>
         <AccordionItem>

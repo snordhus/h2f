@@ -34,7 +34,7 @@
 }
 
 .documents-item {
-  width: 200px;
+  width: 250px;
   height: 200px;
   background-color: #272729;
   text-align: center;
@@ -42,6 +42,7 @@
   padding-top: 10px;
   padding-right: 10px;
   transition: all 0.5s ease;
+  margin-left: 10px;
 }
 
 .documents-item:hover {

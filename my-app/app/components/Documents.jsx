@@ -50,7 +50,7 @@ const Documents = ({ domain }) => {
                 </Text>
                 <Text
                   fontSize="small"
-                  noOfLines={3}
+                  noOfLines={7}
                   className="documents-item-summary"
                 >
                   {doc.data().summary}
