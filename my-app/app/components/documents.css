@@ -36,7 +36,7 @@
 
 .documents-item {
   width: 250px;
-  height: 250px;
+  height: 200px;
   background-color: #272729;
   text-align: center;
   padding-left: 10px;
@@ -73,6 +73,10 @@
   background-color: #515157;
   cursor: pointer;
   border-radius: 20px;
+}
+
+.documents-item-summary {
+  margin-bottom: 10px !important;
 }
 
 .documents-item-title {

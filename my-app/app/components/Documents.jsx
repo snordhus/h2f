@@ -48,13 +48,13 @@ const Documents = ({ domain }) => {
                 <Text
                   fontSize="medium"
                   className="documents-item-title"
-                  noOfLines={1.5}
+                  noOfLines={1}
                 >
                   {doc.data().title}
                 </Text>
                 <Text
                   fontSize="small"
-                  noOfLines={7}
+                  noOfLines={5}
                   className="documents-item-summary"
                 >
                   {doc.data().summary}
@@ -74,7 +74,7 @@ const Documents = ({ domain }) => {
                 </Text>
                 <Text
                   fontSize="small"
-                  noOfLines={5}
+                  noOfLines={3}
                   className="documents-item-summary"
                 >
                   Empty
