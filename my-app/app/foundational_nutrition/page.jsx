@@ -201,7 +201,7 @@ const Page = () => {
                 composition. Leaders may refer their Soldiers to a registered dietitian or the Army Wellness Center for more
                 accurate body composition analysis to track progress. AR 600-9 indicates the weight for height ratio
                 screening tool for Soldiers. Leaders can use monthly weigh-ins and taping to keep track of changes in a
-                Soldier's body composition. However, all Soldiers must adhere to the body fat guidelines outlined in
+                Soldiers body composition. However, all Soldiers must adhere to the body fat guidelines outlined in
                 AR 600-9 </p>
               <br />
             </TabPanel>
