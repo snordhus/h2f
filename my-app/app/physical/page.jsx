@@ -29,25 +29,59 @@ const Physical = async () => {
   // });
 
   return (
-    <div className="domain-parent">
-      {getHero()}
-      {getDescription()}
-      <Documents domain={"physical"} />
-      {/* <div className="documents-parent">
-        <div className="documents">
-          <div className="documents-item"></div>
-          <div className="documents-item"></div>
-          <div className="documents-item"></div>
-          {docs.map((doc) => {
-            return (
-              <div key={doc.id} className="documents-item">
-                {"bruh"}
-              </div>
-            );
-          })}
+    <>
+    <div className="subnav-parent">
+      <div className="background2">
+        <div className="grid-parent2">
+
+          <div className="middle">
+            <Link href="/injury_prevention">
+              <Text fontSize="md" color="white" className="text">
+                Injury Prevention
+              </Text>
+            </Link>
+            <Link href="/mental">
+              <Text fontSize="md" color="white" className="text">
+                Rehab and Reconditioning
+              </Text>
+            </Link>
+            <Link href="/nutrition">
+              <Text fontSize="md" color="white" className="text">
+                Army Wellness Centers
+              </Text>
+            </Link>
+            <Link href="/sleep">
+              <Text fontSize="md" color="white" className="text">
+              Operation Supplement Safety (OPSS)
+              </Text>
+            </Link>
+            <Link href="/sleep">
+              <Text fontSize="md" color="white" className="text">
+              Resources
+              </Text>
+            </Link>
+          </div>
         </div>
-      </div> */}
-    </div>
+      </div>
+    </div><div className="domain-parent">
+        {getHero()}
+        {getDescription()}
+        <Documents domain={"physical"} />
+        {/* <div className="documents-parent">
+      <div className="documents">
+        <div className="documents-item"></div>
+        <div className="documents-item"></div>
+        <div className="documents-item"></div>
+        {docs.map((doc) => {
+          return (
+            <div key={doc.id} className="documents-item">
+              {"bruh"}
+            </div>
+          );
+        })}
+      </div>
+    </div> */}
+      </div></>
   );
 };
 
