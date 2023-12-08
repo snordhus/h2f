@@ -323,7 +323,6 @@ const Page = () => {
                 <Text fontSize="md" color="black" className="menu-text">
                   You are logged in to the profile page - a protected route.
                 </Text>
-
                 <br></br>
                 {isAuth ? (
                   <Text fontSize="md" color="black" className="menu-text">
