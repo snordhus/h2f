@@ -45,7 +45,7 @@ const Documents = ({ domain }) => {
           {docs.map((doc) => (
             <Link key={doc.id} href={doc.data().url} target="_blank">
               <div className="documents-item">
-                <Text fontSize="medium" className="documents-item-title">
+                <Text fontSize="medium" className="documents-item-title" noOfLines={2}>
                   {doc.data().title}
                 </Text>
                 <Text
