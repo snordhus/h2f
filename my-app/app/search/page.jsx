@@ -51,9 +51,9 @@ const Page = () => {
               {doc.data().title}
             </a>
             <div className="pl-8">
-              <h4>Subdomain: {doc.data().subdomain}</h4>
-              <h4>Keywords: {doc.data().keywords.join(", ")}</h4>
-              <h4>Synopsis:</h4>
+              <h4> <b>Subdomain: </b>{doc.data().subdomain}</h4>
+              <h4> <b>Keywords: </b>{doc.data().keywords.join(", ")}</h4>
+              <h4><b>Synopsis: </b></h4>
               <p className="pl-8">{doc.data().summary}</p>
               <p>Contact a Specialist:</p>
             </div>
