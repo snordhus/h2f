@@ -1,7 +1,7 @@
 # H2F website
 
-Authors: Sam Nordhus (user: snordhus), Vinay Viswanathan (user: vinayvis821), Victoria
- [Link to site](https://h2f.vercel.app/)
+- **Authors**: Sam Nordhus (user: snordhus), Vinay Viswanathan (user: vinayvis821), Victoria
+- [**Project URL**](https://h2f.vercel.app/)
 
 
 ### A repository of U.S Army and National Guard documents related to Holistic Health and Fitness(H2F)
@@ -26,7 +26,7 @@ Here is a step-by-step guide detailing how to transfer the ownership of the goog
   - Click: Product Categories > Build > Firestore Database > Create Database > Next (keep defaults) > Enable
   - The database is created, now you must create 2 collections with case-sensitive names:
   - **1)** Start Collection > name it "**documents**" (spelling/case sensitive)
-     -Add the first document, use auto-id, modeling the following fields (all fields are spelling-dependent/case-sensitive):
+     -Add the first document, use auto-id, modeling the following fields (all field names are spelling-dependent/case-sensitive):
   - ![Local Image](tut.png)
   - **2)** Start Collection > name it "**authorizedUsers**" (spelling/case sensitive)
   - add the first document: Use auto-id, and add a single field: "email", and make it's value your email address:
