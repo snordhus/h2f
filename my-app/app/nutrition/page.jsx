@@ -3,13 +3,19 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import hero from "./images/hero2.webp";
+import hero from "../images/hero2.webp";
+import mental from "../images/mental.jpg";
+import spiritual from "../images/spirtitual.webp";
+import all from "../images/All.jpeg";
+import physical from "../images/physical.jpg";
+import nutrition from "../images/Nutrition.jpg";
+import sleep from "../images/sleep.jpeg";
 import { Text } from "@chakra-ui/react";
 import { db } from "../firebase.js";
 import { getDocs, collection } from "firebase/firestore";
 import Documents from "../components/Documents";
 import { useState } from "react";
-import "./nutrition.css";
+import "../domain.css";
 
 // let currentImage = all;
 // let images = [mental, spiritual, all, physical, nutrition, sleep];
@@ -23,7 +29,7 @@ const Nutrition = async () => {
   // });
 
   return (
-    <div className="nutrition-parent">
+    <div className="domain-parent">
       {getHero()}
       {getDescription()}
       <Documents domain={"nutrition"} />
@@ -58,7 +64,13 @@ function getDescription() {
     <div className="description">
       <div className="sub-header">
         <div className="sub-header-image-text">
-          <div className="sub-header-image"></div>
+          <div className="sub-header-image">
+            <Image
+              src={nutrition}
+              alt="national-guard"
+              className="sub-header-image-actual"
+            ></Image>
+          </div>
           <div className="sub-header-text">
             <Text fontSize="x-large" className="sub-header-heading">
               Nutrition
@@ -84,9 +96,27 @@ function getDescription() {
       </div>
       <div className="sub-header-image-parent">
         <div className="sub-header-images">
-          <div className="sub-header-images-image"></div>
-          <div className="sub-header-images-image"></div>
-          <div className="sub-header-images-image"></div>
+          <div className="sub-header-images-image">
+            <Image
+              src={physical}
+              alt="national-guard"
+              className="sector-image"
+            ></Image>
+          </div>
+          <div className="sub-header-images-image">
+            <Image
+              src={nutrition}
+              alt="national-guard"
+              className="sector-image"
+            ></Image>
+          </div>
+          <div className="sub-header-images-image">
+            <Image
+              src={sleep}
+              alt="national-guard"
+              className="sector-image"
+            ></Image>
+          </div>
         </div>
       </div>
     </div>
@@ -100,7 +130,7 @@ function getHero() {
         Nutrition
       </Text>
       <Text className="hero-text-description" fontSize="x-large">
-        The Nutrition domain of Holistic Health and Fitness
+        The Nutrition domain of H2F
       </Text>
       <Image src={hero} alt="national-guard" className="hero-image"></Image>
     </div>

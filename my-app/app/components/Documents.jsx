@@ -29,7 +29,7 @@ const Documents = async ({ domain }) => {
         </Text>
       ) : (
         <Text fontSize="xx-large" className="documents-header">
-          Resources for the {domain} Pillar
+          Document resources for the {domain} pillar
         </Text>
       )}
       <div className="documents-parent">
