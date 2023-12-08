@@ -29,25 +29,55 @@ const Nutrition = async () => {
   // });
 
   return (
-    <div className="domain-parent">
-      {getHero()}
-      {getDescription()}
-      <Documents domain={"nutrition"} />
-      {/* <div className="documents-parent">
-        <div className="documents">
-          <div className="documents-item"></div>
-          <div className="documents-item"></div>
-          <div className="documents-item"></div>
-          {docs.map((doc) => {
-            return (
-              <div key={doc.id} className="documents-item">
-                {"bruh"}
-              </div>
-            );
-          })}
+    <>
+    <div className="subnav-parent">
+      <div className="background2">
+        <div className="grid-parent2">
+         
+          <div className="middle">
+            <Link href="/foundational_nutrition">
+              <Text fontSize="md" color="white" className="text">
+                Foundational Nutrition
+              </Text>
+            </Link>
+            <Link href="/mental">
+              <Text fontSize="md" color="white" className="text">
+                Operational Nutrition
+              </Text>
+            </Link>
+            <Link href="/nutrition">
+              <Text fontSize="md" color="white" className="text">
+                Therapeutic Nutrition
+              </Text>
+            </Link>
+            <Link href="/sleep">
+              <Text fontSize="md" color="white" className="text">
+              Army Body Composition Program (ABCP)
+              </Text>
+            </Link>
+          </div>
         </div>
-      </div> */}
+      </div>
     </div>
+    <div className="domain-parent">
+        {getHero()}
+        {getDescription()}
+        <Documents domain={"nutrition"} />
+        {/* <div className="documents-parent">
+      <div className="documents">
+        <div className="documents-item"></div>
+        <div className="documents-item"></div>
+        <div className="documents-item"></div>
+        {docs.map((doc) => {
+          return (
+            <div key={doc.id} className="documents-item">
+              {"bruh"}
+            </div>
+          );
+        })}
+      </div>
+    </div> */}
+      </div></>
   );
 };
 

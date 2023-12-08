@@ -207,3 +207,73 @@
   text-align: center;
   margin-bottom: 10px;
 }
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,300&display=swap");
+
+.subnav-parent {
+  height: 70px;
+  width: 100%;
+  border-bottom: 1px solid black;
+  font-family: "Montserrat", sans-serif !important;
+}
+
+.background2 {
+  background-color: #4b4b50;
+  height: 100%;
+  width: 100%;
+}
+
+.grid-parent2 {
+  /* display: grid; */
+  display: flex;
+  justify-content: space-between;
+  /* grid-template-columns: 30% 35% 35%; */
+  height: 100%;
+  align-items: center;
+  font-weight: 400;
+  font-size: 3em !important;
+  padding: 0 30px; 
+}
+
+.left2 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.text {
+  color: #f4c430 !important;
+  margin-right: 15px;
+  transition: all 0.5s ease;
+}
+
+
+.menu-text {
+  color: black !important;
+  transition: all 0.5s ease;
+}
+
+.menu-text-profile {
+  color: black !important;
+}
+
+.text:hover {
+  color: white !important;
+}
+
+
+
