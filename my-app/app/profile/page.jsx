@@ -112,15 +112,16 @@ const Page = () => {
   const handleEmailInputChange = (e) => {
     setEmailFormData(e.target.value);
   };
-  const handleEmailFormSubmit = async () => {
-    console.log("Email Input:", emailFormData);
+  const handleEmailFormSubmit = async (e) => {
+    e.preventDefault();
+    let emailValue = document.getElementById("emailInput").value;
+    console.log("Email Input:", emailValue);
     const docRef = await addDoc(collection(db, "authorizedUsers"), {
-      email: emailFormData,
+      email: emailValue,
     });
     console.log("Email written with ID: ", docRef.id);
-    alert("New authorized user: " + emailFormData + " successfully added");
-    setEmailFormData("");
-    // You can add additional logic here if needed
+    alert("New authorized user: " + emailValue + " successfully added");
+    document.getElementById("emailInput").value = "";
   };
 
   let authorizedUsers = [];
@@ -143,29 +144,31 @@ const Page = () => {
     //}
   };
 
-  const handleFormSubmit = async () => {
-    const data = {};
-
-    fields.forEach((field) => {
-      console.log(field.name);
-      console.log(formData[field.name]);
-      data[field.name] = formData[field.name];
-    });
-    console.log(data);
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    let titleValue = document.getElementById("titleInput").value;
+    let subdomainValue = document.getElementById("subdomainInput").value;
+    let keywordValue = document.getElementById("keywordInput").value;
+    let summaryValue = document.getElementById("summaryInput").value;
+    let urlValue = document.getElementById("urlInput").value;
 
     // Add a new document with a generated id.
     const docRef = await addDoc(collection(db, "documents"), {
-      title: data["title"],
-      summary: data["summary"],
-      subdomain: data["subdomain"], // Use the selected value from the dropdown
-      keywords: data["keyword"].toLowerCase().split(", "),
-      url: data["url"],
+      title: titleValue,
+      summary: summaryValue,
+      subdomain: subdomainValue, // Use the selected value from the dropdown
+      keywords: keywordValue.toLowerCase().split(", "),
+      url: urlValue,
       author: user.displayName, // You can use user.displayName if needed
       // user.displayName
     });
     console.log("Document written with ID: ", docRef.id);
     alert("Document written to database successfully!");
-    setFormData(initialState);
+    //setFormData(initialState);
+    document.getElementById("titleInput").value = "";
+    document.getElementById("keywordInput").value = "";
+    document.getElementById("summaryInput").value = "";
+    document.getElementById("urlInput").value = "";
   };
   Documents();
 
@@ -259,7 +262,6 @@ const Page = () => {
                     </label>
                     <Input
                       type="email"
-                      id="emailInput"
                       value={emailFormData}
                       onChange={handleEmailInputChange}
                       placeholder="Enter email"
@@ -353,12 +355,12 @@ const Page = () => {
             <form onSubmit={handleFormSubmit}>
               <FormControl isRequired>
                 <FormLabel>Document Title</FormLabel>
-                <Input type="text" />
+                <Input id="titleInput" type="text" />
               </FormControl>
               <br></br>
               <FormControl isRequired>
                 <FormLabel>Subdomain</FormLabel>
-                <Select>
+                <Select id="subdomainInput">
                   <option value="physical">Physical</option>
                   <option value="mental">Mental</option>
                   <option value="nutrition">Nutrition</option>
@@ -369,7 +371,7 @@ const Page = () => {
               <br></br>
               <FormControl isRequired>
                 <FormLabel>Document Keywords</FormLabel>
-                <Input type="text" placeholder="ex:(word1, word2)" />
+                <Input id="keywordInput" type="text" placeholder="ex:(word1, word2)" />
                 <FormHelperText>
                   Seperate each keyword by a space and comma
                 </FormHelperText>
@@ -377,7 +379,7 @@ const Page = () => {
               <br></br>
               <FormControl isRequired>
                 <FormLabel>Document Summary</FormLabel>
-                <Textarea placeholder="Summary" />
+                <Textarea id="summaryInput" placeholder="Summary" />
                 <FormHelperText>
                   Enter a quick summary of the document
                 </FormHelperText>
@@ -385,7 +387,7 @@ const Page = () => {
               <br></br>
               <FormControl isRequired>
                 <FormLabel>Document URL</FormLabel>
-                <Input type="text" placeholder="" />
+                <Input id="urlInput" type="text" placeholder="" />
                 <FormHelperText>
                   This URL should be publicly available for anyone
                 </FormHelperText>
@@ -414,7 +416,7 @@ const Page = () => {
               <form onSubmit={handleEmailFormSubmit}>
                 <FormControl isRequired>
                   <FormLabel>Add Email</FormLabel>
-                  <Input type="email" placeholder="Email" />
+                  <Input id="emailInput" type="email" placeholder="Email" />
                   <FormHelperText>
                     Enter an email to make them an authorized user
                   </FormHelperText>
