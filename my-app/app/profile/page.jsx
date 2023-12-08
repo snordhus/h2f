@@ -416,7 +416,7 @@ const Page = () => {
                   <FormLabel>Add Email</FormLabel>
                   <Input type="email" placeholder="Email" />
                   <FormHelperText>
-                    Enter a user's email to make them an authorized user
+                    Enter an email to make them an authorized user
                   </FormHelperText>
                 </FormControl>
                 <br></br>

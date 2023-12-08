@@ -3,7 +3,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import hero from "./images/hero2.webp";
+import hero from "../images/hero2.webp";
 import { Text } from "@chakra-ui/react";
 import { db } from "../firebase.js";
 import { getDocs, collection } from "firebase/firestore";
