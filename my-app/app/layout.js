@@ -11,7 +11,7 @@ export const metadata = {
   title: "H2F - National Guard",
   description: "Created by WashU Students",
   icons: {
-    icon: "./favicon.png", // /public path
+    icon: "/icon.png", // /public path
   },
 };
 
