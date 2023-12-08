@@ -29,25 +29,44 @@ const Sleep = async () => {
   // });
 
   return (
-    <div className="domain-parent">
-      {getHero()}
-      {getDescription()}
-      <Documents domain={"sleep"} />
-      {/* <div className="documents-parent">
-        <div className="documents">
-          <div className="documents-item"></div>
-          <div className="documents-item"></div>
-          <div className="documents-item"></div>
-          {docs.map((doc) => {
-            return (
-              <div key={doc.id} className="documents-item">
-                {"bruh"}
-              </div>
-            );
-          })}
+    <>
+    <div className="subnav-parent">
+      <div className="background2">
+        <div className="grid-parent2">
+
+          <div className="middle">
+            <Link href="/injury_prevention">
+              <Text fontSize="md" color="white" className="text">
+                Principles and Fundamentals
+              </Text>
+            </Link>
+            <Link href="/mental">
+              <Text fontSize="md" color="white" className="text">
+                Planning Ahead
+              </Text>
+            </Link>
+          </div>
         </div>
-      </div> */}
-    </div>
+      </div>
+    </div><div className="domain-parent">
+        {getHero()}
+        {getDescription()}
+        <Documents domain={"sleep"} />
+        {/* <div className="documents-parent">
+      <div className="documents">
+        <div className="documents-item"></div>
+        <div className="documents-item"></div>
+        <div className="documents-item"></div>
+        {docs.map((doc) => {
+          return (
+            <div key={doc.id} className="documents-item">
+              {"bruh"}
+            </div>
+          );
+        })}
+      </div>
+    </div> */}
+      </div></>
   );
 };
 
