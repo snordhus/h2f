@@ -74,7 +74,7 @@ const Documents = ({ domain }) => {
                 </Text>
                 <Text
                   fontSize="small"
-                  noOfLines={7}
+                  noOfLines={5}
                   className="documents-item-summary"
                 >
                   Empty
