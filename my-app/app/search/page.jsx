@@ -43,7 +43,7 @@ const Page = () => {
         {docs.map((doc) => (
           <li key={doc.id} className="mb-8">
             <a
-              className="text-2xl bg-blue-500 hover:bg-red-500"
+              className="text-2xl"
               href={doc.data().url}
               target="_blank"
               rel="noreferrer noopener"
